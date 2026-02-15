@@ -25,8 +25,6 @@ Outros: Git, GitHub, Visual Studio / VS Code
 ### Listagem de Heróis
 
  - Exibição de lista de heróis cadastrados com ações de Info, Editar e Excluir.
-  
- - Atualização automática da lista após exclusão.
 
 ### Detalhes do Herói
 
@@ -34,11 +32,11 @@ Outros: Git, GitHub, Visual Studio / VS Code
 
 ### Edição de Heróis
 
- - Atualização dos dados do herói existente, com validações.
+ - Atualização dos dados do herói existente.
 
-### Exclusão com Modal
+### Exclusão
 
- - Confirmação de exclusão via modal customizado (não mais via alert).
+ - Confirmação de exclusão via modal customizado.
 
 # Como Rodar o Projeto
 
