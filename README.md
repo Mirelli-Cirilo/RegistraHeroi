@@ -1,6 +1,6 @@
 # RegistraHeroi
 
-## Projeto desenvolvido para um processo seletivo.
+## Projeto desenvolvido para processo seletivo.
 
 Sistema de registro de heróis, com backend em .NET 8 e frontend em Angular 18 (standalone components), seguindo boas práticas e separação de responsabilidades.
 
