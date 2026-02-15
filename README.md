@@ -2,7 +2,16 @@
 
 ## Projeto desenvolvido para processo seletivo.
 
-Sistema de registro de heróis, com backend em .NET 8 e frontend em Angular 18 (standalone components), seguindo boas práticas e separação de responsabilidades.
+## Sobre a aplicação
+- Optei por desenvolver o backend utilizando .NET, organizando os controllers, services e DTOs de forma clara para manter o código mais fácil de entender e dar manutenção.
+  
+- Usei Entity Framework Core conectado ao banco em memória para facilitar os testes iniciais do projeto e popular os dados de exemplo rapidamente.
+  
+- No frontend com Angular, utilizei Html e Csd para criar interfaces simples e limpas, e organizei os componentes de forma modular para facilitar futuras melhorias.
+  
+- Implementei telas de listagem, criação, edição e exclusão de heróis, garantindo que o fluxo básico da aplicação estivesse completo.
+  
+- Para manter o código mais robusto, organizei os DTOs e serviços de forma consistente e padronizada, facilitando testes e futuras alterações.
 
 ## Tecnologias
 
@@ -11,32 +20,6 @@ Backend: .NET 8, Entity Framework Core, REST API, C#, InMemory Database
 Frontend: Angular 18, HTML, CSS 
 
 Outros: Git, GitHub, Visual Studio / VS Code
-
-## Funcionalidades
-
-### Cadastro de Heróis
-
- - Inserção de heróis com nome real, nome de herói, data de nascimento, altura, peso e superpoderes.
-  
- - Validação de dados obrigatórios e restrições, incluindo impedir datas de nascimento futuras.
-  
- - Mensagens de erro exibidas no formulário e via alert quando necessário.
-
-### Listagem de Heróis
-
- - Exibição de lista de heróis cadastrados com ações de Info, Editar e Excluir.
-
-### Detalhes do Herói
-
- - Tela de informações completas do herói.
-
-### Edição de Heróis
-
- - Atualização dos dados do herói existente.
-
-### Exclusão
-
- - Confirmação de exclusão via modal customizado.
 
 # Como Rodar o Projeto
 
