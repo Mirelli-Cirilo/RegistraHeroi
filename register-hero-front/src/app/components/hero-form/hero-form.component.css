@@ -1,0 +1,157 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6fb;
+  padding: 30px;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #222;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d8dce6;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #5b7fff;
+  box-shadow: 0 0 0 3px rgba(91, 127, 255, 0.2);
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+.powers {
+  margin-top: 25px;
+}
+
+.powers-title {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.powers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.power-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8f9fd;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e4e7f0;
+}
+
+.actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: 0.2s ease-in-out;
+  min-width: 160px;
+}
+
+.btn.primary {
+  background: #d40000; 
+  color: white;
+  box-shadow: 0px 6px 16px rgba(212, 0, 0, 0.4);
+}
+
+.btn.primary:hover {
+  background: #ff1a1a; 
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(255, 26, 26, 0.55);
+}
+
+.btn.secondary {
+  background: #1e1e2f; 
+  color: white;
+  box-shadow: 0px 6px 16px rgba(30, 30, 47, 0.35);
+}
+
+.btn.secondary:hover {
+  background: #343450;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(52, 52, 80, 0.45);
+}
+.api-error {
+    color: #d40000;
+    margin-left: 230px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 650px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .powers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

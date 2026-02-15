@@ -1,0 +1,78 @@
+<div class="page">
+  <div class="card">
+
+    <div class="header">
+      <h2 class="title"> Lista de Heróis</h2>
+
+      <button class="btn primary" (click)="router.navigate(['/herois/novo'])">
+        + Novo Herói
+      </button>
+    </div>
+
+    <div *ngIf="loading" class="status loading">
+      Carregando heróis...
+    </div>
+
+    <div *ngIf="error" class="status error">
+      {{ error }}
+    </div>
+
+    <table *ngIf="!loading && herois.length > 0" class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome do Herói</th>
+          <th class="actions-col">Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let heroi of herois">
+          <td>{{ heroi.id }}</td>
+          <td>{{ heroi.nomeHeroi }}</td>
+          <td class="actions-col">
+            <button class="btn info small" (click)="details(heroi.id)">
+                Info
+            </button>
+            
+            <button class="btn secondary small" (click)="edit(heroi.id)">
+              Editar
+            </button>
+
+            <button class="btn danger small" (click)="openDeleteModal(heroi)">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && herois.length === 0" class="empty">
+      Nenhum herói cadastrado ainda 
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-card">
+    
+    <h3 class="modal-title">Confirmar Exclusão</h3>
+
+    <p class="modal-text">
+      Tem certeza que deseja excluir o herói:
+      <strong>{{ nomeParaExcluir }}</strong>?
+    </p>
+
+    <div class="modal-actions">
+      <button class="btn secondary" (click)="closeModal()">
+        Cancelar
+      </button>
+
+      <button class="btn danger" (click)="confirmDelete()">
+        Excluir
+      </button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="container">
+
+  <div *ngIf="loading" class="loading">
+    Carregando detalhes do herói...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && heroi" class="card">
+
+    <h2 class="title">🦸 Detalhes do Herói</h2>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="label">Nome:</span>
+        <span class="value">{{ heroi.nome }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Nome de Herói:</span>
+        <span class="value hero-name">{{ heroi.nomeHeroi }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Data de Nascimento:</span>
+        <span class="value">
+          {{ heroi.dataNascimento ? (heroi.dataNascimento | date:'dd/MM/yyyy') : 'Não informada' }}
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Altura:</span>
+        <span class="value">{{ heroi.altura }} m</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Peso:</span>
+        <span class="value">{{ heroi.peso }} kg</span>
+      </div>
+    </div>
+
+    <div class="powers">
+      <h3>⚡ Superpoderes</h3>
+
+      <div *ngIf="heroi.superpoderes?.length === 0" class="empty">
+        Nenhum superpoder cadastrado.
+      </div>
+
+      <ul *ngIf="heroi.superpoderes?.length > 0">
+        <li *ngFor="let sp of heroi.superpoderes">
+          <span class="power-name">{{ sp.superPoder }}</span>
+          <span class="power-desc">- {{ sp.descricao }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <button class="btn secondary" (click)="voltar()"> Voltar</button>
+      <button class="btn primary" (click)="editar()"> Editar</button>
+    </div>
+
+  </div>
+</div>

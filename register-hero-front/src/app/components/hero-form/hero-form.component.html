@@ -1,0 +1,89 @@
+<div class="page">
+  <div class="card">
+    <h2 class="title">{{ idHeroi ? 'Editar Herói' : 'Cadastrar Herói' }}</h2>
+
+    <div class="api-error" *ngIf="apiError">
+            {{ apiError }}
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-grid">
+        
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" formControlName="nome" placeholder="Digite o nome real" />
+          <small *ngIf="form.get('nome')?.touched && form.get('nome')?.invalid">
+            O nome é obrigatório.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Nome do Herói</label>
+          <input type="text" formControlName="nomeHeroi" placeholder="Ex: Batman" />
+          <small *ngIf="form.get('nomeHeroi')?.touched && form.get('nomeHeroi')?.invalid">
+            O nome do herói é obrigatório.
+          </small>
+        </div>
+
+        <div class="form-group">
+            <label>Data de Nascimento</label>
+            <input type="date" formControlName="dataNascimento" />
+
+            <div class="error" *ngIf="form.get('dataNascimento')?.errors?.['dataFutura']">
+                Data de nascimento não pode ser futura.
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label>Altura</label>
+          <input type="number" formControlName="altura" placeholder="Ex: 1.80" />
+          <small *ngIf="form.get('altura')?.touched && form.get('altura')?.invalid">
+            A altura é obrigatória.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Peso</label>
+          <input type="number" formControlName="peso" placeholder="Ex: 80" />
+          <small *ngIf="form.get('peso')?.touched && form.get('peso')?.invalid">
+            O peso é obrigatório.
+          </small>
+        </div>
+
+      </div>
+
+      <div class="powers">
+        <label class="powers-title">Superpoderes</label>
+
+        <div class="powers-grid">
+          <div class="power-item" *ngFor="let sp of superpoderes">
+            <input
+              type="checkbox"
+              [value]="sp.id"
+              (change)="onCheck($event)"
+              [checked]="form.value.superpoderesIds.includes(sp.id)"
+            />
+            <span>{{ sp.superpoder }}</span>
+          </div>
+        </div>
+
+        <small *ngIf="form.get('superpoderesIds')?.touched && form.get('superpoderesIds')?.invalid">
+          Selecione pelo menos 1 superpoder.
+        </small>
+      </div>
+
+      <div class="actions">
+
+        <button type="submit" class="btn primary">
+          {{ idHeroi ? 'Atualizar' : 'Cadastrar' }}
+        </button>
+
+        <button type="button" class="btn secondary" (click)="router.navigate(['/herois'])">
+          Cancelar
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

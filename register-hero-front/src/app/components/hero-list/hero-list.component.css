@@ -1,0 +1,257 @@
+.page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2b2b40, #0b0b12);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 0, 0, 0.25);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #d40000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status {
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.status.loading {
+  background: #f5f5f5;
+  color: #222;
+}
+
+.status.error {
+  background: #ffe2e2;
+  color: #b00000;
+}
+
+.empty {
+  text-align: center;
+  padding: 20px;
+  font-weight: 700;
+  color: #333;
+  background: #f8f9fd;
+  border-radius: 12px;
+  border: 1px solid #e4e7f0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.table thead {
+  background: #d40000;
+  color: white;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 0, 0, 0.07);
+}
+
+.actions-col {
+  text-align: right;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: 0.2s ease-in-out;
+  min-width: 140px;
+}
+
+.btn.small {
+  min-width: auto;
+  padding: 10px 16px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.btn.primary {
+  background: #d40000;
+  color: white;
+  box-shadow: 0px 6px 16px rgba(212, 0, 0, 0.4);
+}
+
+.btn.primary:hover {
+  background: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(255, 26, 26, 0.55);
+}
+
+.btn.secondary {
+  background: #1e1e2f;
+  color: white;
+  margin-left: 10px;
+  box-shadow: 0px 6px 16px rgba(30, 30, 47, 0.35);
+}
+
+.btn.secondary:hover {
+  background: #343450;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(52, 52, 80, 0.45);
+}
+
+.btn.danger {
+  background: #b00000;
+  color: white;
+  margin-left: 10px;
+  box-shadow: 0px 6px 16px rgba(176, 0, 0, 0.4);
+}
+
+.btn.danger:hover {
+  background: #ff0000;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(255, 0, 0, 0.55);
+}
+
+.btn.info {
+  background: #0066ff;
+  color: white;
+  box-shadow: 0px 6px 16px rgba(0, 102, 255, 0.35);
+}
+
+.btn.info:hover {
+  background: #3385ff;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(51, 133, 255, 0.5);
+}
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn.primary {
+    width: 100%;
+  }
+
+  .actions-col {
+    text-align: left;
+    
+  }
+
+  .table th,
+  .table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 20, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+}
+
+.modal-card {
+  background: #151522;
+  padding: 28px;
+  border-radius: 18px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-title {
+  color: #ff3b3b;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  color: #ddd;
+  font-size: 15px;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.modal-text strong {
+  color: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn.danger {
+  background: #d40000;
+  color: white;
+  box-shadow: 0px 6px 16px rgba(212, 0, 0, 0.4);
+}
+
+.btn.danger:hover {
+  background: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 22px rgba(255, 26, 26, 0.55);
+}
+
