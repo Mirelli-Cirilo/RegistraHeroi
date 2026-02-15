@@ -27,6 +27,7 @@ Outros: Git, GitHub, Visual Studio / VS Code
 ### 1. Abra a pasta RegisterHeroApi/ no Visual Studio.
 ### 2. Abra o Terminal dentro da pasta do projeto e rode o comando - > "dotnet run"
   - A API estará disponível em disponível em http://localhost:5159.
+  - O Swagger fica disponível em http://localhost:5159/swagger.
 ### 3. Banco de dados: usa InMemory, não precisa de SQL Server ou configuração adicional.
 
 ## Frontend (Angular)
