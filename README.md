@@ -8,7 +8,7 @@ Sistema de registro de heróis, com backend em .NET 8 e frontend em Angular 18 (
 
 Backend: .NET 8, Entity Framework Core, REST API, C#, InMemory Database
 
-Frontend: Angular 17, HTML, CSS 
+Frontend: Angular 18, HTML, CSS 
 
 Outros: Git, GitHub, Visual Studio / VS Code
 
